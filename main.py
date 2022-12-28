@@ -4,12 +4,16 @@ information = []
 
 class Student:
     def __init__(self, name):
-        self.name = name
+        self.__name = name
         self.health = random.randint(50, 100)
         self.happiness = random.randint(40, 100)
         self.intelligence = random.randint(0, 100)
         self.edu_performance = random.randint(0, 100)
         self.work_ability = random.choice(['lazy', 'hard-working', 'ordinary'])
+
+    @property
+    def name(self):
+        return self.__name
 
     def update(self, action):
         if action == '[\'entertain\']':
